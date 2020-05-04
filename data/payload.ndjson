@@ -1,0 +1,6 @@
+{ "index": { "_id": "1" } }
+{ "name": "Text Sample" }
+{ "index": { "_id": "2" } }
+{ "name": "Text Sample", "custom_score_1": 10 }
+{ "index": { "_id": "3" } }
+{ "name": "Sample", "custom_score_1": 12 }

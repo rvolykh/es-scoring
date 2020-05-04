@@ -1,0 +1,11 @@
+# OS/IDE specific files/folders
+.DS_Store
+.idea/
+.history/
+.vscode/
+
+# folders for temporary files
+/bin/
+/var/
+/logs/
+/pkg/

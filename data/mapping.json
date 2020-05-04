@@ -1,0 +1,23 @@
+{
+  "mappings": {
+    "items": {
+      "properties": {
+        "name": {
+          "type": "text"
+        },
+        "custom_score_1": {
+          "type": "double"
+        }
+      }
+    }
+  },
+  "settings": {
+    "index": {
+      "number_of_shards": 8,
+      "number_of_replicas": 1,
+      "mapper": {
+        "dynamic": false
+      }
+    }
+  }
+}

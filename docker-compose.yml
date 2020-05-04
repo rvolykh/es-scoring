@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  elastic:
+    image: elasticsearch:5.1
+    ports:
+      - '9200:9200'
+    networks:
+      - es_scoring
+
+networks:
+  es_scoring:
+    driver: bridge

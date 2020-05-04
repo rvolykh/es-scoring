@@ -1,0 +1,18 @@
+{
+  "query": {
+    "more_like_this" : {
+      "fields" : ["name"],
+      "like" : [
+        {
+          "_index" : "es-scoring",
+          "_type" : "items",
+          "_id" : "1"
+        }
+      ],
+      "min_term_freq" : 0,
+      "min_doc_freq" : 0,
+      "include": true,
+      "minimum_should_match": "0%"
+    }
+  }
+}
