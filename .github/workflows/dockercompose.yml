@@ -1,0 +1,31 @@
+name: Docker Compose
+
+on:
+  push:
+    # Run for master
+    branches:
+      - master
+  # Run for any PRs.
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Up
+        run: |
+          make env
+          make index
+          make payload
+      - name: Test
+        run: |
+          echo "NO SCORE"; make test-noscore
+          echo "REGULAR"; make test-regular
+          echo "SCRIPT_SCORE"; make test-script
+          echo "FIELD_VALUE_FACTOR"; make test-field
+      - name: Down
+        if: always()
+        run: |
+          make index-delete
+          make env-delete

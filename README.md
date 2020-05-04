@@ -1,5 +1,7 @@
 # es-scoring
 
+![](https://github.com/rvolykh/es-scoring/workflows/Docker%20Compose/badge.svg)
+
 Experiment with custom scoring in Elasticsearch.
 
 Source: https://www.elastic.co/guide/en/elasticsearch/reference/5.1/query-dsl-function-score-query.html
