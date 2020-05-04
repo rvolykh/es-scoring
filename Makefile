@@ -8,7 +8,7 @@ default: help
 
 env: ## deploy local environment and wait for readiness
 	@ docker-compose up -d
-	@ (docker-compose logs | grep started) || (sleep 1; $(MAKE) env)
+	@ (docker-compose logs | grep started) || (sleep 1; make env)
 .PHONY: env
 
 index: ## create Elasticsearch index
