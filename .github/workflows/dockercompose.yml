@@ -15,7 +15,8 @@ jobs:
       - uses: actions/checkout@v2
       - name: Up
         run: |
-          make env
+          docker-compose up -d
+          until (docker-compose logs | grep started); do sleep 1; docker-compose logs; done
           make index
           make payload
       - name: Test
