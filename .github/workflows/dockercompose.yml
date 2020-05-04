@@ -15,8 +15,10 @@ jobs:
       - uses: actions/checkout@v2
       - name: Up
         run: |
-          docker-compose up -d
-          until (docker-compose logs | grep started); do sleep 1; docker-compose logs; done
+          # Issue: https://github.com/elastic/elasticsearch/issues/23486
+          # Fix: https://github.com/elastic/elasticsearch/pull/23493
+          sed -i 's/5.1/5.3.1/g' docker-compose.yml
+          make env
           make index
           make payload
       - name: Test
